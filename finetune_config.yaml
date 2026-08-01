@@ -1,0 +1,37 @@
+data_path: "./Dataset/"
+pretrained_weights: "./Pretrained_weights/pretrained_weights.pth"
+save_dir: "./finetune_results"
+
+model:
+  input_dim: 147
+  hidden_dim: 256
+  edge_feature_dim: 5
+  gnn_layer_num: 3
+
+  t_n_layers: 4
+  t_num_heads: 8
+  t_dropout_rate: 0.1
+  t_attention_dropout_rate: 0.1
+
+  t_hops: 3
+  g_dropout_rate: 0.2
+  class_dropoutrate: 0.4
+
+  tau: 0.1
+
+training:
+  batch_size: 256
+  epochs: 200
+  lr: 0.0005
+  weight_decay: 0.0001
+  warmup_epochs: 20
+  eval_interval: 1
+  min_lr: 1e-6
+  seed: 36
+
+
+dataset:
+  num_workers: 0
+  valid_size: 0.08
+  test_size: 0.2
+  splitting: random
